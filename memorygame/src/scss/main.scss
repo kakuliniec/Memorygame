@@ -28,6 +28,7 @@ body {
   transform-style: preserve-3d;
   transition: transform 0.5s;
   box-shadow: 3px 3px 5px gray;
+  object-fit: contain;
 }
 .card:hover {
   box-shadow: 3px 3px 5px lightskyblue;
