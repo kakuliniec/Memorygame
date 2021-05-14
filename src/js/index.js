@@ -1,4 +1,3 @@
-import '../css/main.css';
 
 // uncomment the lines below to enable PWA
 // import {registerSW} from './pwa.js';
@@ -6,8 +5,8 @@ import '../css/main.css';
 
 /* place your code below */
 
-cards = document.querySelectorAll(".card");
-audio = document.querySelector("audio");
+const cards = document.querySelectorAll(".card");
+const audio = document.querySelector("audio");
 shuffleCards();
 click = 0;
 previousCard = null;
