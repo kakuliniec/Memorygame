@@ -1,4 +1,4 @@
-import '../scss/main.scss';
+import '../css/main.css';
 
 // uncomment the lines below to enable PWA
 // import {registerSW} from './pwa.js';
