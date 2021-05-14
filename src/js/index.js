@@ -5,7 +5,7 @@
 
 /* place your code below */
 
-const cards = document.querySelectorAll(".card");
+var cards = document.querySelectorAll(".card");
 const audio = document.querySelector("audio");
 shuffleCards();
 var click = 0;
@@ -78,7 +78,7 @@ const cardsContainer = document.querySelector(".cards");
 //}
 
 cards.forEach(card => {
-const index = Math.floor(Math.random() * 12);
+var index = Math.floor(Math.random() * 12);
 card.style.order = index;
   });
 
