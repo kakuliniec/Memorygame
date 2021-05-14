@@ -8,8 +8,8 @@
 const cards = document.querySelectorAll(".card");
 const audio = document.querySelector("audio");
 shuffleCards();
-click = 0;
-previousCard = null;
+var click = 0;
+var previousCard = null;
 
 cards.forEach(
   card => card.addEventListener("click", flip)
@@ -39,8 +39,8 @@ unflipCards(this, previousCard);
 }
 
 function isMatch(firstCard, secondCard) {
-  img1 = firstCard.querySelector(".back").src;
-  img2 = secondCard.querySelector(".back").src;
+  const img1 = firstCard.querySelector(".back").src;
+  const img2 = secondCard.querySelector(".back").src;
 
 // if (img1 == img2) {
 // return true;
@@ -70,7 +70,7 @@ function unflipCards(firstCard, secondCard) {
 }
 
 function shuffleCards() {
-cardsContainer = document.querySelector(".cards");
+const cardsContainer = document.querySelector(".cards");
 
 //for (i = 0; i < cards.lenght; i++) {
 //index = Math.floor(Math.random() * i);
@@ -78,7 +78,7 @@ cardsContainer = document.querySelector(".cards");
 //}
 
 cards.forEach(card => {
-index = Math.floor(Math.random() * 12);
+const index = Math.floor(Math.random() * 12);
 card.style.order = index;
   });
 
