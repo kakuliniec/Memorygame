@@ -9,7 +9,7 @@ module.exports = {
   },
   output: {
     filename: "[name].[hash:8].js",
-    path: __dirname + "./dist",
+    path: __dirname + "../dist",
   },
   module: {
     rules: [
