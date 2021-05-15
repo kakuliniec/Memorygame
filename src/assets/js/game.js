@@ -1,8 +1,8 @@
-var cards = document.querySelectorAll(".card");
+const cards = document.querySelectorAll(".card");
 const audio = document.querySelector("audio");
 shuffleCards();
-var click = 0;
-var previousCard = null;
+let click = 0;
+let previousCard = null;
 
 cards.forEach((card) => card.addEventListener("click", flip));
 // document.addEventListener("click", flip);
@@ -66,7 +66,7 @@ function shuffleCards() {
   //}
 
   cards.forEach((card) => {
-    var index = Math.floor(Math.random() * 12);
+    const index = Math.floor(Math.random() * 12);
     card.style.order = index;
   });
 }
