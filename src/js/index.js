@@ -1,19 +1,15 @@
-
 // uncomment the lines below to enable PWA
 // import {registerSW} from './pwa.js';
 // registerSW();
 
 /* place your code below */
-
 var cards = document.querySelectorAll(".card");
 const audio = document.querySelector("audio");
 shuffleCards();
 var click = 0;
 var previousCard = null;
 
-cards.forEach(
-  card => card.addEventListener("click", flip)
-);
+cards.forEach((card) => card.addEventListener("click", flip));
 // document.addEventListener("click", flip);
 
 function flip() {
@@ -21,33 +17,32 @@ function flip() {
   this.classList.toggle("flip");
   togglePictures(this);
 
-if(click % 2 == 1) {
-previousCard = this;
-  return;
-}
+  if (click % 2 == 1) {
+    previousCard = this;
+    return;
+  }
 
-if(this != previousCard && isMatch(this,previousCard)) {
-  this.removeEventListener("click", flip);
-  previousCard.removeEventListener("click", flip);
-audio.play();
- // alert("Hurreyyy, you've matched cards!");
-  return;
-}
+  if (this != previousCard && isMatch(this, previousCard)) {
+    this.removeEventListener("click", flip);
+    previousCard.removeEventListener("click", flip);
+    audio.play();
+    // alert("Hurreyyy, you've matched cards!");
+    return;
+  }
   //togglePictures(previousCard);
   //togglePictures(this);
-unflipCards(this, previousCard);
+  unflipCards(this, previousCard);
 }
 
 function isMatch(firstCard, secondCard) {
   const img1 = firstCard.querySelector(".back").src;
   const img2 = secondCard.querySelector(".back").src;
 
-// if (img1 == img2) {
-// return true;
-// }
+  // if (img1 == img2) {
+  // return true;
+  // }
 
   return img1 == img2;
-
 }
 
 function togglePictures(card) {
@@ -56,7 +51,7 @@ function togglePictures(card) {
 }
 
 function unflipCards(firstCard, secondCard) {
-  setTimeout( () => {
+  setTimeout(() => {
     // remove class flip
     firstCard.classList.remove("flip");
     secondCard.classList.remove("flip");
@@ -64,22 +59,19 @@ function unflipCards(firstCard, secondCard) {
     // togglePicture
     togglePictures(firstCard);
     togglePictures(secondCard);
-  }, 
-  1000
-  );
+  }, 1000);
 }
 
 function shuffleCards() {
-const cardsContainer = document.querySelector(".cards");
+  const cardsContainer = document.querySelector(".cards");
 
-//for (i = 0; i < cards.lenght; i++) {
-//index = Math.floor(Math.random() * i);
-//cardsContainer.appendChild(cards[index]); 
-//}
+  //for (i = 0; i < cards.lenght; i++) {
+  //index = Math.floor(Math.random() * i);
+  //cardsContainer.appendChild(cards[index]);
+  //}
 
-cards.forEach(card => {
-var index = Math.floor(Math.random() * 12);
-card.style.order = index;
+  cards.forEach((card) => {
+    var index = Math.floor(Math.random() * 12);
+    card.style.order = index;
   });
-
 }
