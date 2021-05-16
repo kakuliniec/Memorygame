@@ -11,12 +11,11 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.s[ac]ss$/i,
-        loader: [
+        use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
-          "postcss-loader",
           "sass-loader"
-        ],
+      ]
       },
       {
         test: /\.css$/i,
@@ -29,12 +28,13 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
       filename: "[name].[hash:8].css",
       chunkFilename: "[id].css",
+      linkType: 'text/css',
+      publicPath: './dist'
     }),
   ],
   optimization: {
