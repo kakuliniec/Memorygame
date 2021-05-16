@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const path = require("path");
 
 module.exports = {
   /* here you can define another js file */
@@ -57,8 +58,7 @@ module.exports = {
     ],
   },
 
-  devServer: {
-    port: 8080,
+  devServer: { contenBase: path.join(__dirname, "/dist"),
   },
 
   plugins: [
