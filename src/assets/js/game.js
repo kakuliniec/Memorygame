@@ -1,7 +1,6 @@
 function game() {
   const cards = document.querySelectorAll(".card");
   const audio = document.querySelector("audio");
-  console.log(cards)
   shuffleCards();
   let click = 0;
   let previousCard = null;
