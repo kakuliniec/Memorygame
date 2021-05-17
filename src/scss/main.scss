@@ -8,7 +8,7 @@
 }
 
 body {
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,13 +88,14 @@ html {
 }
 
 @media (min-width: 768px) {
-  // NOWY KOD CSS
+  // new css code
 }
 
 @media (min-width: 1024px) {
-  // NOWY KOD CSS
+  .cards {
+    max-width: 60%;}
 }
 
 @media (min-width: 1366px) {
-  // NOWY KOD CSS
+  // new css code
 }
