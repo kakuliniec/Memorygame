@@ -1,3 +1,4 @@
+const path = require('path')
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
@@ -9,7 +10,7 @@ module.exports = {
   },
   output: {
     filename: "[name].[hash:8].js",
-    path: __dirname + "./dist",
+    path: path.resolve(__dirname, './dist'),
   },
   module: {
     rules: [
